@@ -210,5 +210,12 @@ jQuery(document).ready(function($){
     navigator.serviceWorker
              .register('./service-worker.js')
              .then(function() { console.log('Service Worker Registered'); });
-  }
+	}
+	
+	jQuery("#my-countdown")
+  .countdown("2018/04/25 09:00:00", function(event) {
+    $(this).text(
+      event.strftime('%D Tage %H h %M min %S sec')
+    );
+  });
 });

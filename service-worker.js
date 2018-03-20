@@ -1,4 +1,4 @@
-var cacheName = 'meinTollesEvent-1';
+var cacheName = 'labsDayPwa-1';
 var filesToCache = [
   '/',
   '/index.html',
@@ -9,6 +9,7 @@ var filesToCache = [
   '/js/main.js',
   '/js/modernizr.js',
   '/js/jquery-3.0.0.min.js',
+  '/js/jquery.countdown.min.js',
   '/css/reset.css',
   '/css/style.css'
 ];
