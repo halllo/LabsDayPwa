@@ -1,2 +1,2 @@
-# EventPwa
+# LabsDayPwa
 My first PWA.
