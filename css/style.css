@@ -445,6 +445,11 @@ Main Components
   overflow: auto;
   height: 100%;
   padding: 1.4em 5%;
+  text-align: justify;
+}
+
+.cd-schedule .event-modal .event-info > div p {
+  margin-top: 20px;
 }
 
 .cd-schedule .event-modal .header-bg, .cd-schedule .event-modal .body-bg {

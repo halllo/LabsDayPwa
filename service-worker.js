@@ -1,4 +1,4 @@
-var cacheName = 'labsDayPwa-1';
+var cacheName = 'labsDayPwa-5';
 var filesToCache = [
   '/',
   '/index.html',
