@@ -1,4 +1,4 @@
-var cacheName = 'labsDayPwa-6';
+var cacheName = 'labsDayPwa-7';
 var filesToCache = [
   '/',
   '/index.html',
@@ -6,7 +6,7 @@ var filesToCache = [
   '/event-cloud-intro.html',
   '/event-container.html',
   '/event-hackathon.html',
-  '/event-praesentation.html',
+  '/event-praesentation-v2.html',
   '/event-preise.html',
   '/event-workshops.html',
   '/js/main.js',
