@@ -301,8 +301,8 @@ Main Components
   opacity: 0;
 }
 
-.cd-schedule .event-name,
-.cd-schedule .event-date {
+.event-name,
+.event-date {
   display: block;
   color: white;
   font-weight: bold;
@@ -310,11 +310,17 @@ Main Components
   -moz-osx-font-smoothing: grayscale;
 }
 
-.cd-schedule .event-name {
+.event-name {
   font-size: 2rem;
 }
 
-.cd-schedule .event-date {
+.event-room {
+ font-size: 0.7em; 
+ color: white;
+ opacity: 0.7;
+}
+
+.event-date {
   /* they are not included in the the HTML but added using JavScript */
   font-size: 1.4rem;
   opacity: .7;
@@ -322,72 +328,72 @@ Main Components
   margin-bottom: .2em;
 }
 
-.cd-schedule .single-event[data-event="event-1"],
-.cd-schedule [data-event="event-1"] .header-bg {
+.single-event[data-event="event-1"],
+[data-event="event-1"] .header-bg {
   /* this is used to set a background color for the event and the modal window */
   background: #577F92;
 }
-.cd-schedule .single-event[data-event="event-1"]:hover {
+.single-event[data-event="event-1"]:hover {
   background: #618da1;
 }
 
-.cd-schedule .single-event[data-event="event-2"],
-.cd-schedule [data-event="event-2"] .header-bg {
+.single-event[data-event="event-2"],
+[data-event="event-2"] .header-bg {
   background: #443453;
 }
-.cd-schedule .single-event[data-event="event-2"]:hover {
+.single-event[data-event="event-2"]:hover {
   background: #513e63;
 }
 
-.cd-schedule .single-event[data-event="event-3"],
-.cd-schedule [data-event="event-3"] .header-bg {
+.single-event[data-event="event-3"],
+[data-event="event-3"] .header-bg {
   background: #A2B9B2;
 }
-.cd-schedule .single-event[data-event="event-3"]:hover {
+.single-event[data-event="event-3"]:hover {
   background: #b1c4be;
 }
 
-.cd-schedule .single-event[data-event="event-4"],
-.cd-schedule [data-event="event-4"] .header-bg {
+.single-event[data-event="event-4"],
+[data-event="event-4"] .header-bg {
   background: #f6b067;
 }
-.cd-schedule .single-event[data-event="event-4"]:hover {
+.single-event[data-event="event-4"]:hover {
   background: #f7bd7f;
 }
 
-.cd-schedule .single-event[data-event="event-5"],
-.cd-schedule [data-event="event-5"] .header-bg {
+.single-event[data-event="event-5"],
+[data-event="event-5"] .header-bg {
   background: #469e43;
 }
-.cd-schedule .single-event[data-event="event-5"]:hover {
+.single-event[data-event="event-5"]:hover {
   background: #469f63;
 }
 
-.cd-schedule .single-event[data-event="event-6"],
-.cd-schedule [data-event="event-6"] .header-bg {
+.single-event[data-event="event-6"],
+[data-event="event-6"] .header-bg {
   background: #46123f;
 }
-.cd-schedule .single-event[data-event="event-6"]:hover {
+.single-event[data-event="event-6"]:hover {
   background: #46125f;
 }
 
-.cd-schedule .single-event[data-event="event-7"],
-.cd-schedule [data-event="event-7"] .header-bg {
+.single-event[data-event="event-7"],
+[data-event="event-7"] .header-bg {
   background: #f66767;
 }
-.cd-schedule .single-event[data-event="event-7"]:hover {
+.single-event[data-event="event-7"]:hover {
   background: #f66777;
 }
 
-.cd-schedule .single-event[data-event="event-8"],
-.cd-schedule [data-event="event-8"] .header-bg {
+.single-event[data-event="event-8"],
+[data-event="event-8"] .header-bg {
   background: #525a26;
 }
-.cd-schedule .single-event[data-event="event-8"]:hover {
+.single-event[data-event="event-8"]:hover {
   background: #525a56;
 }
 
-.cd-schedule .event-modal {
+#my-schedules .event-modal {
   position: fixed;
   z-index: 3;
   top: 0;
@@ -409,7 +415,7 @@ Main Components
           transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
 }
 
-.cd-schedule .event-modal .header {
+#my-schedules .event-modal .header {
   position: relative;
   height: 70px;
   /* vertically center its content */
@@ -417,7 +423,7 @@ Main Components
   width: 100%;
 }
 
-.cd-schedule .event-modal .header .content {
+#my-schedules .event-modal .header .content {
   position: relative;
   z-index: 3;
   /* vertically center inside its parent */
@@ -426,14 +432,14 @@ Main Components
   padding: .6em 5%;
 }
 
-.cd-schedule .event-modal .body {
+#my-schedules .event-modal .body {
   position: relative;
   width: 100%;
   /* 70px is the .header height */
   height: calc(100% - 70px);
 }
 
-.cd-schedule .event-modal .event-info {
+#my-schedules .event-modal .event-info {
   position: relative;
   z-index: 2;
   line-height: 1.4;
@@ -441,18 +447,22 @@ Main Components
   overflow: hidden;
 }
 
-.cd-schedule .event-modal .event-info > div {
+#my-schedules .event-modal .event-info > div {
   overflow: auto;
   height: 100%;
   padding: 1.4em 5%;
   text-align: justify;
 }
 
-.cd-schedule .event-modal .event-info > div p {
+#my-schedules .event-modal .event-info > div p {
   margin-top: 20px;
 }
 
-.cd-schedule .event-modal .header-bg, .cd-schedule .event-modal .body-bg {
+#my-schedules .event-modal .event-info .survey a {
+  font-size: 1.5em;
+}
+
+#my-schedules .event-modal .header-bg, #my-schedules .event-modal .body-bg {
   /* these are the morphing backgrounds - visible on desktop only */
   position: absolute;
   top: 0;
@@ -461,7 +471,7 @@ Main Components
   width: 100%;
 }
 
-.cd-schedule .event-modal .body-bg {
+#my-schedules .event-modal .body-bg {
   z-index: 1;
   background: white;
   -webkit-transform-origin: top left;
@@ -469,14 +479,14 @@ Main Components
           transform-origin: top left;
 }
 
-.cd-schedule .event-modal .header-bg {
+#my-schedules .event-modal .header-bg {
   z-index: 2;
   -webkit-transform-origin: top center;
       -ms-transform-origin: top center;
           transform-origin: top center;
 }
 
-.cd-schedule .event-modal .close {
+#my-schedules .event-modal .close {
   /* this is the 'X' icon */
   position: absolute;
   top: 0;
@@ -491,7 +501,7 @@ Main Components
   width: 70px;
 }
 
-.cd-schedule .event-modal .close::before, .cd-schedule .event-modal .close::after {
+#my-schedules .event-modal .close::before, #my-schedules .event-modal .close::after {
   /* these are the two lines of the 'X' icon */
   content: '';
   position: absolute;
@@ -504,39 +514,39 @@ Main Components
   backface-visibility: hidden;
 }
 
-.cd-schedule .event-modal .close::before {
+#my-schedules .event-modal .close::before {
   -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
       -ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
           transform: translateX(-50%) translateY(-50%) rotate(45deg);
 }
 
-.cd-schedule .event-modal .close::after {
+#my-schedules .event-modal .close::after {
   -webkit-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
       -ms-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
           transform: translateX(-50%) translateY(-50%) rotate(-45deg);
 }
 
-.cd-schedule .event-modal .event-date {
+#my-schedules .event-modal .event-date {
   display: none;
 }
 
-.cd-schedule .event-modal.no-transition {
+#my-schedules .event-modal.no-transition {
   -webkit-transition: none;
   transition: none;
 }
 
-.cd-schedule .event-modal.no-transition .header-bg, .cd-schedule .event-modal.no-transition .body-bg {
+#my-schedules .event-modal.no-transition .header-bg, #my-schedules .event-modal.no-transition .body-bg {
   -webkit-transition: none;
   transition: none;
 }
 
 @media only screen and (min-width: 1000px) {
-  .cd-schedule .event-modal .header .content {
+  #my-schedules .event-modal .header .content {
     padding: 1.2em;
   }
 }
 
-.cd-schedule.modal-is-open .event-modal {
+#my-schedules.modal-is-open .event-modal {
   /* .modal-is-open class is added as soon as an event is selected */
   -webkit-transform: translateX(0);
       -ms-transform: translateX(0);
@@ -544,21 +554,21 @@ Main Components
   visibility: visible;
 }
 
-.cd-schedule.modal-is-open .event-modal .event-info > div {
+#my-schedules.modal-is-open .event-modal .event-info > div {
   /* smooth scroll on iOS touch devices */
   -webkit-overflow-scrolling: touch;
 }
 
 @media only screen and (min-width: 800px) {
-  .cd-schedule.animation-completed .event-modal .close,
-  .cd-schedule.content-loaded.animation-completed .event-modal .event-info {
+  #my-schedules.animation-completed .event-modal .close,
+  #my-schedules.content-loaded.animation-completed .event-modal .event-info {
     /* 	the .animation-completed class is added when the modal animation is completed
 			the .content-loaded class is added when the modal content has been loaded (using ajax) */
     opacity: 1;
     -webkit-transition: opacity .2s;
     transition: opacity .2s;
   }
-  .cd-schedule.modal-is-open .body-bg {
+  #my-schedules.modal-is-open .body-bg {
     opacity: 1;
     -webkit-transition: -webkit-transform .4s;
     transition: -webkit-transform .4s;
@@ -569,7 +579,7 @@ Main Components
   }
 }
 
-.cd-schedule .cover-layer {
+#my-schedules .cover-layer {
   /* layer between the content and the modal window */
   position: fixed;
   z-index: 2;
@@ -584,7 +594,7 @@ Main Components
   transition: opacity .4s, visibility .4s;
 }
 
-.cd-schedule.modal-is-open .cover-layer {
+#my-schedules.modal-is-open .cover-layer {
   opacity: 1;
   visibility: visible;
 }

@@ -20,7 +20,8 @@ jQuery(document).ready(function($){
 		this.singleEvents = this.eventsGroup.find('.single-event');
 		this.eventSlotHeight = this.eventsGroup.eq(0).children('.top-info').outerHeight();
 
-		this.modal = this.element.find('.event-modal');
+		this.modalparent = $("#my-schedules");
+		this.modal = $("#my-event-modal");
 		this.modalHeader = this.modal.find('.header');
 		this.modalHeaderBg = this.modal.find('.header-bg');
 		this.modalBody = this.modal.find('.body'); 
@@ -43,7 +44,7 @@ jQuery(document).ready(function($){
 		this.eventSlotHeight = this.eventsGroup.eq(0).children('.top-info').outerHeight();
 		this.element.addClass('js-full');
 		this.placeEvents();
-		this.element.hasClass('modal-is-open') && this.checkEventModal();
+		this.modalparent.hasClass('modal-is-open') && this.checkEventModal();
 
 	};
 
@@ -66,9 +67,6 @@ jQuery(document).ready(function($){
 		this.modal.on('click', '.close', function(event){
 			event.preventDefault();
 			if( !self.animating ) self.closeModal(self.eventsGroup.find('.selected-event'));
-		});
-		this.element.on('click', '.cover-layer', function(event){
-			if( !self.animating && self.element.hasClass('modal-is-open') ) self.closeModal(self.eventsGroup.find('.selected-event'));
 		});
 	};
 
@@ -106,7 +104,7 @@ jQuery(document).ready(function($){
 			self.element.addClass('content-loaded');
 		});
 
-		this.element.addClass('modal-is-open');
+		this.modalparent.addClass('modal-is-open');
 
 		setTimeout(function(){
 			//fixes a flash when an event is selected - desktop version only
@@ -127,7 +125,7 @@ jQuery(document).ready(function($){
 		
 		this.animating = true;
 
-		this.element.removeClass('modal-is-open');
+		this.modalparent.removeClass('modal-is-open');
 		this.modal.one(transitionEnd, function(){
 			self.modal.off(transitionEnd);
 			self.animating = false;
